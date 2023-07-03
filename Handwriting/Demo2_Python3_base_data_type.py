@@ -1,6 +1,5 @@
 import unittest
 
-
 """
 标准数据类型
 Python3 中常见的数据类型有：
@@ -19,6 +18,7 @@ Python3 的六个标准数据类型中：
 此外还有一些高级的数据类型，如: 字节数组类型(bytes)。
 """
 
+
 class Study_2(unittest.TestCase):
     """
     Python3 基本数据类型
@@ -27,6 +27,7 @@ class Study_2(unittest.TestCase):
     等号（=）用来给变量赋值。
     等号（=）运算符左边是一个变量名,等号（=）运算符右边是存储在变量中的值。例如：
     """
+
     def test_base_data_type(self):
         counter = 100  # 整型变量
         miles = 1000.0  # 浮点型变量
@@ -58,6 +59,7 @@ class Study_2(unittest.TestCase):
     像大多数语言一样，数值类型的赋值和计算都是很直观的。
     内置的 type() 函数可以用来查询变量所指的对象类型。
     """
+
     def test_Number_2(self):
         a, b, c, d = 20, 5.5, True, 4 + 3j
         print(type(a), type(b), type(c), type(d))
@@ -79,15 +81,61 @@ class Study_2(unittest.TestCase):
 
         print(True + 1)
         print(False + 1)
-        print(1 is True)
-        print(0 is False)
+        # print(1 is True)
+        # print(0 is False)
 
     '''
     当你指定一个值时，Number 对象就会被创建：
     您也可以使用del语句删除一些对象引用。
     del语句的语法是：
     '''
+
     def test_del_1(self):
         var1 = 1
         var2 = 10
         del var1, var2
+
+    """
+    数值运算
+    """
+    def test_numerical_operations(self):
+        print(f"5 + 4 = {5 + 4} # 加法")
+        print(f"4.3 - 2 = {4.3 - 2} # 减法")
+        print(f"3 * 7 = {3 * 7} # 乘法")
+        print(f"2 / 4 = {2 / 4}  # 除法，得到一个浮点数")
+        print(f"2 // 4 = {2 // 4} # 除法，得到一个整数")
+        print(f"17 % 3 = {17 % 3} # 取余")
+        print(f"2 ** 5 = {2 ** 5} # 乘方")
+
+    """
+    字符串操作
+    """
+    def test_String_1(self):
+        str = 'Runoob'
+
+        print(str)  # 输出字符串
+        print(str[0:-1])  # 输出第一个到倒数第二个的所有字符
+        print(str[0])  # 输出字符串第一个字符
+        print(str[2:5])  # 输出从第三个开始到第五个的字符
+        print(str[2:])  # 输出从第三个开始的后的所有字符
+        print(str * 2)  # 输出字符串两次，也可以写成 print (2 * str)
+        print(str + "TEST")  # 连接字符串
+
+        print("Python 使用反斜杠 \ 转义特殊字符，如果你不想让反斜杠发生转义，可以在字符串前面添加一个 r，表示原始字符串：")
+        print('Ru\noob')
+        print(r'Ru\noob')
+        '''
+        另外，反斜杠(\)可以作为续行符，表示下一行是上一行的延续。也可以使用 """...""" 或者 \'''...\''' 跨越多行。
+        注意，Python 没有单独的字符类型，一个字符就是长度为1的字符串。
+        '''
+        word = 'Python'
+        print(word[0], word[5])
+        print(word[-1], word[-6])
+        '''
+        与 C 字符串不同的是，Python 字符串不能被改变。向一个索引位置赋值，比如 word[0] = 'm' 会导致错误。
+        注意：
+            1、反斜杠可以用来转义，使用r可以让反斜杠不发生转义。
+            2、字符串可以用+运算符连接在一起，用*运算符重复。
+            3、Python中的字符串有两种索引方式，从左往右以0开始，从右往左以-1开始。
+            4、Python中的字符串不能改变。
+        '''
