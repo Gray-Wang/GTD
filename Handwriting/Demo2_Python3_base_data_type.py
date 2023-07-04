@@ -98,6 +98,7 @@ class Study_2(unittest.TestCase):
     """
     数值运算
     """
+
     def test_numerical_operations(self):
         print(f"5 + 4 = {5 + 4} # 加法")
         print(f"4.3 - 2 = {4.3 - 2} # 减法")
@@ -110,6 +111,7 @@ class Study_2(unittest.TestCase):
     """
     字符串操作
     """
+
     def test_String_1(self):
         str = 'Runoob'
 
@@ -158,6 +160,7 @@ class Study_2(unittest.TestCase):
         
         布尔类型也可以被转换成其他数据类型，比如整数、浮点数和字符串。在转换时，True 会被转换成 1，False 会被转换成 0。
     """
+
     def test_bool(self):
         a = True
         b = False
@@ -194,6 +197,7 @@ class Study_2(unittest.TestCase):
         变量[头下标:尾下标]
         索引值以 0 为开始值，-1 为从末尾的开始位置。
     """
+
     def test_List(self):
         # 加号 + 是列表连接运算符，星号 * 是重复操作。如下实例：
         list = ['abcd', 786, 2.23, 'runoob', 70.2]
@@ -222,10 +226,10 @@ class Study_2(unittest.TestCase):
         Python 列表截取可以接收第三个参数，参数作用是截取的步长，以下实例在索引 1 到索引 4 的位置并设置为步长为 2（间隔一个位置）来截取字符串：
         '''
 
-
     """
     如果第三个参数为负数表示逆向读取，以下实例用于翻转字符串：
     """
+
     def test_reverseWords(self):
         input = "I love you"
         # 通过空格将字符串分隔符，把各个单词分隔为列表
@@ -250,6 +254,7 @@ class Study_2(unittest.TestCase):
         
         元组中的元素类型也可以不相同：
     """
+
     def test_Tuple(self):
         tuple = ('abcd', 786, 2.23, 'runoob', 70.2)
         tinytuple = (123, 'runoob')
@@ -286,3 +291,111 @@ class Study_2(unittest.TestCase):
             3、注意构造包含 0 或 1 个元素的元组的特殊语法规则。
             4、元组也可以使用+操作符进行拼接。
         '''
+
+    '''
+    Set（集合）
+        集合（set）是由一个或数个形态各异的大小整体组成的，构成集合的事物或对象称作元素或是成员。
+        set是无序不重复元素的序列。
+        基本功能是进行成员关系测试和删除重复元素。
+        可以使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。
+        创建格式：
+            parame = {value01,value02,...}
+            或者
+            set(value)
+    '''
+
+    def test_Set(self):
+        # 注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。
+        set_var = set()
+        # 非空集合 可以使用大括号 { } 或者 set() 函数创建集合
+        sites = {'Google', 'Taobao', 'Runoob', 'Facebook', 'Zhihu', 'Baidu'}
+        print(sites)  # 输出集合，重复的元素被自动去掉
+
+        # 成员测试
+        if 'Runoob' in sites:
+            print('Runoob 在集合中')
+        else:
+            print('Runoob 不在集合中')
+
+        # set可以进行集合运算
+        a = set('abracadabra')
+        b = set('alacazam')
+
+        print(a)
+
+        print(a - b)  # a 和 b 的差集
+
+        print(a | b)  # a 和 b 的并集
+
+        print(a & b)  # a 和 b 的交集
+
+        print(a ^ b)  # a 和 b 中不同时存在的元素
+        # set()参数可以是列表，元组，字典等
+        person2 = set(("hello", "jerry", 133, 11, 133, "jerru"))
+        print(person2)
+        # set是无序不重复元素的序列。
+        person3 = {"hello", "jerry", 133, 11, 133, "jerru"}
+        print(person3)
+
+    '''
+    Dictionary（字典）
+        字典（dictionary）是Python中另一个非常有用的内置数据类型。
+        
+        列表是有序的对象集合，字典是无序的对象集合。两者之间的区别在于：字典当中的元素是通过键来存取的，而不是通过偏移存取。
+        
+        字典是一种映射类型，字典用 { } 标识，它是一个无序的 键(key) : 值(value) 的集合。
+        
+        键(key)必须使用不可变类型。
+        
+        在同一个字典中，键(key)必须是唯一的。
+    '''
+
+    def test_Dictionary(self):
+        dict = {}
+        dict['one'] = "1 - 菜鸟教程"
+        dict[2] = "2 - 菜鸟工具"
+
+        tinydict = {'name': 'runoob', 'code': 1, 'site': 'www.runoob.com'}
+
+        print(dict['one'])  # 输出键为 'one' 的值
+        print(dict[2])  # 输出键为 2 的值
+        print(tinydict)  # 输出完整的字典
+        print(tinydict.keys())  # 输出所有键
+        print(tinydict.values())  # 输出所有值
+
+        # 构造函数 dict() 可以直接从键值对序列中构建字典如下：
+        lst = [('Runoob', 1), ('Google', 2), ('Taobao', 3)]
+        '''
+        以下代码会报错，原因及解决方案如下：
+        在上述代码中，`dict`是Python内置的字典类型，它是一个类对象。在第1行中我们创建了一个变量`dict`并将其赋值为空字典。但是，与此同时，
+        Python解释器也将`dict`作为类对象来绑定。在第11行中，我们尝试使用`dict()`函数来创建一个新的字典对象，并将其赋值给`dic_var`。然而，
+        由于上述我们已经将名称`dict`与一个字典对象绑定，所以在此处尝试调用`dict()`函数会导致`TypeError`异常。
+        为了解决这个问题，你可以将变量`dict`重命名为其他名称，以避免与内置的`dict`函数产生冲突。例如，修改第1行的代码为`my_dict = {}`。
+        '''
+        dic_var = dict(lst)
+        print(dic_var)
+        # 也可以用推导式来创建字典
+        dic_var2 = {x: x ** 2 for x in (2, 4, 6)}
+        print(dic_var2)
+
+    '''
+    在 Python3 中，bytes 类型表示的是不可变的二进制序列（byte sequence）。
+    与字符串类型不同的是，bytes 类型中的元素是整数值（0 到 255 之间的整数），而不是 Unicode 字符。
+    bytes 类型通常用于处理二进制数据，比如图像文件、音频文件、视频文件等等。在网络编程中，也经常使用 bytes 类型来传输二进制数据。
+    '''
+
+    def test_bytes(self):
+        # 创建 bytes 对象的方式有多种，最常见的方式是使用 b 前缀：
+        # 此外，也可以使用 bytes() 函数将其他类型的对象转换为 bytes 类型。
+        # bytes() 函数的第一个参数是要转换的对象，第二个参数是编码方式，如果省略第二个参数，则默认使用 UTF-8 编码：
+        x = bytes("hello", encoding="utf-8")
+        # 与字符串类型类似，bytes 类型也支持许多操作和方法，如切片、拼接、查找、替换等等。同时，
+        # 由于 bytes 类型是不可变的，因此在进行修改操作时需要创建一个新的 bytes 对象。例如：
+        x = b"hello"
+        y = x[1:3]  # 切片操作，得到 b"el"
+        z = x + b"world"  # 拼接操作，得到 b"helloworld"
+        # 需要注意的是，bytes 类型中的元素是整数值，因此在进行比较操作时需要使用相应的整数值。例如：
+        x = b"hello"
+        # ord() 函数用于获取指定字符的整数值
+        if x[0] == ord("h"):
+            print("The first element is 'h'")
