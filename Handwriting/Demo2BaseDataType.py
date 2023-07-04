@@ -19,7 +19,7 @@ Python3 的六个标准数据类型中：
 """
 
 
-class Study_2(unittest.TestCase):
+class Demo2BaseDataType(unittest.TestCase):
     """
     Python3 基本数据类型
     Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。
